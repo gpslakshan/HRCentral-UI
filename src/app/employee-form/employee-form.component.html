@@ -1,59 +1,77 @@
-<h2>{{ isEditing ? "Update" : "Create" }} Employee</h2>
+<h2 class="my-5 text-center">{{ isEditing ? "Update" : "Create" }} Employee</h2>
 
 @if (errorMessage !== '') {
 {{ errorMessage }}
 }
 
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <label for="firstName">FirstName</label>
+<form (ngSubmit)="onSubmit()" class="col-lg-6 mx-auto mb-5 border rounded p-3">
+  <div class="mb-3">
+    <label for="firstName" class="form-label">FirstName</label>
     <input
       type="text"
       name="firstName"
       id="firstName"
+      class="form-control"
       [(ngModel)]="employee.firstName"
     />
   </div>
 
-  <div>
-    <label for="lastName">LastName</label>
+  <div class="mb-3">
+    <label for="lastName" class="form-label">LastName</label>
     <input
       type="text"
       name="lastName"
       id="lastName"
+      class="form-control"
       [(ngModel)]="employee.lastName"
     />
   </div>
 
-  <div>
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" [(ngModel)]="employee.email" />
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      class="form-control"
+      [(ngModel)]="employee.email"
+    />
   </div>
 
-  <div>
-    <label for="phone">Phone</label>
-    <input type="tel" name="phone" id="phone" [(ngModel)]="employee.phone" />
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input
+      type="tel"
+      name="phone"
+      id="phone"
+      class="form-control"
+      [(ngModel)]="employee.phone"
+    />
   </div>
 
-  <div>
-    <label for="email">Position</label>
+  <div class="mb-3">
+    <label for="email" class="form-label">Position</label>
     <input
       type="text"
       name="position"
       id="position"
+      class="form-control"
       [(ngModel)]="employee.position"
     />
   </div>
 
-  <div>
-    <label for="email">Salary</label>
+  <div class="mb-3">
+    <label for="email" class="form-label">Salary</label>
     <input
       type="number"
       name="salary"
       id="salary"
+      class="form-control"
       [(ngModel)]="employee.salary"
     />
   </div>
 
-  <button type="submit">{{ isEditing ? "Update" : "Create" }}</button>
+  <button type="submit" class="mt-2 btn btn-primary btn-lg">
+    {{ isEditing ? "Update" : "Create" }}
+  </button>
 </form>
