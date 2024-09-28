@@ -65,6 +65,7 @@
   <div class="mb-3">
     <label for="phone" class="form-label">Phone</label>
     <input
+      #phone="ngModel"
       maxlength="10"
       type="tel"
       name="phone"
@@ -72,6 +73,10 @@
       class="form-control"
       [(ngModel)]="employee.phone"
     />
+    @if (phone.invalid && (phone.touched || phone.dirty)) { @if
+    (phone.errors?.['maxlength']) {
+    <p class="text-danger">Phone number cannot have more than 10 characters</p>
+    } }
   </div>
 
   <div class="mb-3">
